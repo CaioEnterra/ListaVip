@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constrainedWidth="true"
+    tools:context="com.example.ascom_unitins.listavip.TelaPrincipal">
+
+    <Button
+        android:id="@+id/BotaoCadEvento"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="142dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="31dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="62dp"
+        android:background="@color/colorPrimary"
+        android:text="Cadastro de EVENTO ++"
+        app:layout_constraintBottom_toTopOf="@+id/BotaoEvento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/BotaoEvento"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="142dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="31dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:text="EVENTO"
+        app:layout_constraintBottom_toTopOf="@+id/BotaoSobre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/BotaoSobre"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="142dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="92dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorPrimary"
+        android:text="Sobre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
