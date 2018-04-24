@@ -13,13 +13,12 @@ import com.example.ascom_unitins.listavip.R;
 class ItemHolder extends RecyclerView.ViewHolder {
 
 
-    TextView confirma = null;
     TextView evento = null;
 
     ItemHolder(View view){
         super(view);
 
-        confirma = (TextView) view.findViewById(R.id.confirma);
+
         evento = (TextView) view.findViewById(R.id.NomeEvento);
 
 

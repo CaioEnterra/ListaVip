@@ -1,11 +1,12 @@
-package com.example.ascom_unitins.listavip;
+package com.example.ascom_unitins.listavip.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+
+import com.example.ascom_unitins.listavip.R;
 
 public class TelaPrincipal extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,7 +45,7 @@ public class TelaPrincipal extends AppCompatActivity implements View.OnClickList
         vrBotaoEvento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TelaPrincipal.this,  TelaEvento.class);
+                Intent intent = new Intent(TelaPrincipal.this,  TelaListaEvento.class);
                 startActivity(intent);
             }
         });

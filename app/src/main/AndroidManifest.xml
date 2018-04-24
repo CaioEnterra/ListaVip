@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".View.TelaPrincipal"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,15 +19,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TelaSobre"
+            android:name=".View.TelaSobre"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TelaCadastroEvento"
+            android:name=".View.TelaCadastroEvento"
             android:screenOrientation="portrait" />
-        <activity android:name=".TelaCadastroPessoas"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TelaEvento"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".View.TelaCadastroPessoas"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".View.TelaListaEvento"
+            android:screenOrientation="portrait" />
+        <activity android:name=".View.TelaListaPessoas"></activity>
     </application>
 
 </manifest>

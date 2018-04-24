@@ -1,28 +1,24 @@
 package com.example.ascom_unitins.listavip.View;
 
-import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+
 import com.example.ascom_unitins.listavip.model.*;
 import com.example.ascom_unitins.listavip.R;
 import com.example.ascom_unitins.listavip.model.Evento;
 
 import java.util.ArrayList;
 
-public class TelaEvento extends AppCompatActivity {
+public class TelaListaEvento extends AppCompatActivity {
     ArrayList<Evento> dataSource = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_evento);
+        setContentView(R.layout.activity_tela_lista_evento);
 
        //dataSource = TelaCadastroEvento.retorna();
 

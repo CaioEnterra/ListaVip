@@ -1,7 +1,9 @@
-package com.example.ascom_unitins.listavip;
+package com.example.ascom_unitins.listavip.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.ascom_unitins.listavip.R;
 
 public class TelaSobre extends AppCompatActivity {
 

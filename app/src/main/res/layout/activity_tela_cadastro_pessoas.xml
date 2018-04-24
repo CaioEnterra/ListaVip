@@ -4,13 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ascom_unitins.listavip.TelaCadastroPessoas">
+    tools:context="com.example.ascom_unitins.listavip.View.TelaCadastroPessoas">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="10dp"
-        android:text="TelaCasdratroPessoa"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="216dp" />
+        android:id="@+id/dadosEventoCadastrado"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="FestaJaCadastrada   Data Inicio xx/xx/xxxx Data termino xx/xx/xxxx"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/numero"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="294dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/Branco"
+        android:hint="numero"
+        android:inputType="text"
+        android:padding="20dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInsta" />
+
+    <EditText
+        android:id="@+id/userInsta"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="294dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/Branco"
+        android:hint="UserName #Insta"
+        android:inputType="text"
+        android:padding="20dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idadePessoa" />
+
+    <EditText
+        android:id="@+id/idadePessoa"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="294dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/Branco"
+        android:hint="Idade"
+        android:inputType="text"
+        android:padding="20dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomePessoa2" />
+
+    <EditText
+        android:id="@+id/nomePessoa2"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="294dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/Branco"
+        android:hint="Nome"
+        android:inputType="text"
+        android:padding="20dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Botao_Cadastra_Pessoa"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="142dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        android:text="OK"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numero"
+        app:layout_constraintVertical_bias="1.0" />
+
 </android.support.constraint.ConstraintLayout>

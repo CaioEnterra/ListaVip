@@ -1,4 +1,4 @@
-package com.example.ascom_unitins.listavip;
+package com.example.ascom_unitins.listavip.model;
 
 
 import android.support.v7.widget.RecyclerView;
@@ -6,12 +6,23 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.example.ascom_unitins.listavip.R;
+
 public class Pessoa  {
 
     private String nome;
     private String dataNascimento;
     private String insta;
     private String numero;
+
+    //Construtor
+    public Pessoa() {
+    }
+
+
+    public Pessoa(String nome){
+        setNome(nome);
+    };
 
     //Metodo get set
     public String getNome() {
@@ -47,17 +58,19 @@ public class Pessoa  {
     }
 }
 
-//metodo que usa recyclerView, usando o chekBox da activity Pessoa
-class ItemHolder extends RecyclerView.ViewHolder {
+class ItemHolderPessoa extends RecyclerView.ViewHolder {
 
 
-    CheckBox confirma = null;
+    TextView confirma = null;
 
-    ItemHolder(View view){
+
+    ItemHolderPessoa(View view){
         super(view);
 
-        confirma = (CheckBox) view.findViewById(R.id.confirma);
+        confirma = (TextView) view.findViewById(R.id.confirma);
+
 
 
     }
 }
+

@@ -1,4 +1,6 @@
-package com.example.ascom_unitins.listavip;
+package com.example.ascom_unitins.listavip.model;
+
+import com.example.ascom_unitins.listavip.model.Pessoa;
 
 import java.util.ArrayList;
 
@@ -8,6 +10,16 @@ public class Evento {
     private String dataFim;
     private String dataInicio;
     private ArrayList<Pessoa> pessoas;
+   //Construtor
+    public Evento() {
+    }
+
+
+    public Evento(String nome){
+        setNome(nome);
+    };
+
+
 
 
     //Metodo get set
