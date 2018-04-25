@@ -10,12 +10,12 @@ import com.example.ascom_unitins.listavip.R;
 /**
  * Created by Ascom_Unitins on 24/04/2018.
  */ //metodo que usa recyclerView, usando o chekBox da activity Pessoa
-class ItemHolder extends RecyclerView.ViewHolder {
+class ItemHolderEvento extends RecyclerView.ViewHolder {
 
 
     TextView evento = null;
 
-    ItemHolder(View view){
+    ItemHolderEvento(View view){
         super(view);
 
 
