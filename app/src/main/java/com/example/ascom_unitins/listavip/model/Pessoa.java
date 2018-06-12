@@ -11,9 +11,10 @@ import com.example.ascom_unitins.listavip.R;
 public class Pessoa  {
 
     private String nome;
-    private String dataNascimento;
+    private String idade;
     private String insta;
     private String numero;
+    private String nome_evento;
 
     //Construtor
     public Pessoa() {
@@ -33,12 +34,12 @@ public class Pessoa  {
         this.nome = nome;
     }
 
-    public String getDataNascimento() {
-        return dataNascimento;
+    public String getIdade() {
+        return idade;
     }
 
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setIdade(String dataNascimento) {
+        this.idade = dataNascimento;
     }
 
     public String getInsta() {
@@ -56,21 +57,15 @@ public class Pessoa  {
     public void setNumero(String numero) {
         this.numero = numero;
     }
-}
 
-class ItemHolderPessoa extends RecyclerView.ViewHolder {
-
-
-    TextView confirma = null;
-
-
-    ItemHolderPessoa(View view){
-        super(view);
-
-        confirma = (TextView) view.findViewById(R.id.confirma);
-
-
-
+    public String getNome_evento() {
+        return nome_evento;
     }
+
+    public void setNome_evento(String nome_evento) {
+        this.nome_evento = nome_evento;
+    }
+
+
 }
 

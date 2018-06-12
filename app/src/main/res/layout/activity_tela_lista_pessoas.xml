@@ -10,12 +10,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnNovaPessoa"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+
+
+            android:clickable="true"
+
+            tools:layout_editor_absoluteY="8dp"
+            android:layout_gravity="bottom|end"
+            />
+
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/ListaPessoas"
+            android:id="@+id/ListaPes"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="8dp"
+            android:layout_height="495dp"
+            tools:layout_editor_absoluteX="392dp"
             tools:layout_editor_absoluteY="8dp" />
+
     </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

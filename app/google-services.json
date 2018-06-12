@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "688452385793",
+    "firebase_url": "https://dip-moveis.firebaseio.com",
+    "project_id": "dip-moveis",
+    "storage_bucket": "dip-moveis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688452385793:android:497bfc4a6a467713",
+        "android_client_info": {
+          "package_name": "com.example.ascom_unitins.listavip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688452385793-lcn3ehcjm0dsnmm6r2abheiuli13m7mb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ascom_unitins.listavip",
+            "certificate_hash": "0efb110021fc6a0975d3adc424783a84ce7d62ff"
+          }
+        },
+        {
+          "client_id": "688452385793-s0vmu4f893ughae7p044nh2ei3bvnrq7.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "688452385793-s0vmu4f893ughae7p044nh2ei3bvnrq7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJqOay1x0YdW8tX0a5_UXLFhDwpBENZH0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688452385793-s0vmu4f893ughae7p044nh2ei3bvnrq7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

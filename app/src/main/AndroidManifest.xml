@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ascom_unitins.listavip">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +13,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".View.TelaPrincipal"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,16 +23,19 @@
         </activity>
         <activity
             android:name=".View.TelaSobre"
-            android:screenOrientation="portrait" />
+
+             />
         <activity
             android:name=".View.TelaCadastroEvento"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+             />
         <activity
             android:name=".View.TelaCadastroPessoas"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+             />
         <activity
             android:name=".View.TelaListaEvento"
-            android:screenOrientation="portrait" />
+            />
         <activity android:name=".View.TelaListaPessoas"></activity>
     </application>
 

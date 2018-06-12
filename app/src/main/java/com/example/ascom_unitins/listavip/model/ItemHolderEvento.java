@@ -14,12 +14,17 @@ class ItemHolderEvento extends RecyclerView.ViewHolder {
 
 
     TextView evento = null;
+    TextView DataFinal = null;
+    TextView DataInicio = null;
 
     ItemHolderEvento(View view){
         super(view);
 
 
         evento = (TextView) view.findViewById(R.id.NomeEvento);
+        DataFinal = (TextView) view.findViewById(R.id.DataFinal);
+        DataInicio = (TextView) view.findViewById(R.id.DataInicio);
+
 
 
     }

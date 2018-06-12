@@ -1,5 +1,6 @@
 package com.example.ascom_unitins.listavip.View;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ public class TelaPrincipal extends AppCompatActivity implements View.OnClickList
     //Atributos de classe
     private Button vrBotaoCadastrodeEvento = null;
     private Button vrBotaoCadastroPessoa = null;
+
     private Button vrBotaoSobre = null;
     private Button vrBotaoEvento = null;
 

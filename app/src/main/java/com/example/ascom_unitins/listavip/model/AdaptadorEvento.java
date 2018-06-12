@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,16 +14,18 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.ascom_unitins.listavip.R;
+import com.example.ascom_unitins.listavip.View.TelaListaEvento;
+import com.example.ascom_unitins.listavip.View.TelaListaPessoas;
 
 import java.util.ArrayList;
 
-public class Adaptador extends RecyclerView.Adapter<ItemHolder>{
+public class AdaptadorEvento extends RecyclerView.Adapter<ItemHolderEvento>{
 
     Context contexto = null;
     ArrayList<Evento> lista = null;
     private AlertDialog alerta;
 
-    public Adaptador(Context contexto, ArrayList<Evento> lista){
+    public AdaptadorEvento(Context contexto, ArrayList<Evento> lista){
 
         this.contexto = contexto;
         this.lista = lista;
@@ -30,11 +33,12 @@ public class Adaptador extends RecyclerView.Adapter<ItemHolder>{
 
     //METODO CHAMADO N VEZES PARA INFLAR O XML DA CELULA E RETORNAR UM OBJETO DE LAYOUT
     /* Método que deverá retornar layout criado pelo ViewHolder já inflado em uma view. */
+
     //@NonNull
     @Override
-    public ItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ItemHolderEvento onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View celula = LayoutInflater.from(contexto).inflate(R.layout.activity_evento, parent,false );
-        ItemHolder item = new ItemHolder(celula);
+        ItemHolderEvento item = new ItemHolderEvento(celula);
         return item;
     }
     /*
@@ -43,24 +47,24 @@ public class Adaptador extends RecyclerView.Adapter<ItemHolder>{
      * É onde a mágica acontece!
      * */
     @Override
-    public void onBindViewHolder(@NonNull ItemHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ItemHolderEvento holder, final int position) {
         Evento item = lista.get(position);
 
         holder.evento.setText(item.getNome());
+        holder.DataInicio.setText(item.getDataInicio());
+        holder.DataFinal.setText(item.getDataFim());
 
-        holder.evento.setOnClickListener(new View.OnClickListener(){
+        final Bundle parametros = new Bundle();
+        parametros.putString("NomeEvento", item.getNome());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
 
                 contexto = view.getContext();
-                Intent intent = new Intent(contexto,Pessoa.class);
-                String posicao = Integer.toString(position);
-                Log.d("posicao", posicao);
-                //intent.putExtra("Nome", lista.get(position).getNome());
-
-
-
+                Intent intent = new Intent(contexto,TelaListaPessoas.class);
+                intent.putExtras(parametros);
                 contexto.startActivity(intent);
 
 
@@ -68,33 +72,7 @@ public class Adaptador extends RecyclerView.Adapter<ItemHolder>{
         });
 
 
-        holder.evento.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(contexto);
-                builder.setTitle("Titulo");
-                //define a mensagem
-                builder.setMessage("Apagar " + lista.get(position).getNome());
-                //define um botão como positivo
-                builder.setPositiveButton("Apagar", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        //NetworkUtils.Apagar(lista.get(position));
-                        Toast.makeText(contexto, lista.get(position).getNome()+" Apagada", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                //define um botão como negativo.
-                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                    }
-                });
-                //cria o AlertDialog
-                alerta = builder.create();
-                //Exibe
-                alerta.show();
-                return true;
-            }
 
-        });
 
     }
 

@@ -11,9 +11,12 @@ import android.widget.EditText;
 
 import com.example.ascom_unitins.listavip.R;
 import com.example.ascom_unitins.listavip.model.Evento;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class TelaCadastroEvento extends AppCompatActivity {
 
@@ -27,13 +30,17 @@ public class TelaCadastroEvento extends AppCompatActivity {
 
     private Button vrBotaoOK = null;
 
+    //atribudo de refencia do banco
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro_evento);
+        //referencia do firebase
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-       //Metodo que para pegar dia, mes e ano do calendario (Data de Inicio)
+        //Metodo que para pegar dia, mes e ano do calendario (Data de Inicio)
         dataInicio = (EditText) findViewById(R.id.textData_Inicio_Evento);
         dataInicio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,10 +55,10 @@ public class TelaCadastroEvento extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                         //paramentros dos separadores
-                        dataInicio.setText(i2+"/"+i1+"/"+i);
+                        dataInicio.setText(i2 + "/" + i1 + "/" + i);
                     }
 
-                },ano,mes,dia);
+                }, ano, mes, dia);
                 mTimePicker.setTitle("Selecione a data");
                 mTimePicker.show();
             }
@@ -69,10 +76,10 @@ public class TelaCadastroEvento extends AppCompatActivity {
                 mTimePicker = new DatePickerDialog(TelaCadastroEvento.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        dataTermino.setText(i2+"/"+i1+"/"+i);
+                        dataTermino.setText(i2 + "/" + i1 + "/" + i);
                     }
 
-                },ano,mes,dia);
+                }, ano, mes, dia);
                 mTimePicker.setTitle("Selecione a data");
                 mTimePicker.show();
             }
@@ -88,7 +95,7 @@ public class TelaCadastroEvento extends AppCompatActivity {
 
     }
 
-    public void cadastrar(){
+    public void cadastrar() {
         Evento evento = new Evento();
         nomeEvento = (EditText) findViewById(R.id.textNome_Evento);
 
@@ -96,17 +103,32 @@ public class TelaCadastroEvento extends AppCompatActivity {
         evento.setNome(nomeEvento.getText().toString());
         evento.setDataFim(dataTermino.getText().toString());
 
-        Intent intent = new Intent(TelaCadastroEvento.this,  TelaCadastroPessoas.class);
-                startActivity(intent);
+
+        //Dicionario que recebe os paramentros para avançar
+
+        Bundle parametros = new Bundle();
+        parametros.putString("NomeEvento",evento.getNome());
+        parametros.putString("DataInicioEvento",evento.getDataInicio());
+        parametros.putString("DataFimEvento",evento.getDataFim());
+
+
+        mDatabase.child("EventoDB").child(String.valueOf(new Date())).setValue(evento);
+
 
         eventoList.add(evento);
+        TelaListaEvento.pega(eventoList);
+
+        Intent intent = new Intent(TelaCadastroEvento.this, TelaCadastroPessoas.class);
+        intent.putExtras(parametros);
+
+
+
+
+
+        startActivity(intent);
+
+
     }
-
-    public ArrayList<Evento> retorna(){
-
-        return eventoList;
-    }
-
 
 
 }
