@@ -4,4 +4,6 @@
     <color name="Branco">#ffffff</color>
     <color name="colorPrimaryDark">#121611</color>
     <color name="colorAccent">#40bcff</color>
+    <color name="corPresencaConfirmar">#40ff40</color>
+    <color name="corPresencaConfirmada">#40bcff</color>
 </resources>

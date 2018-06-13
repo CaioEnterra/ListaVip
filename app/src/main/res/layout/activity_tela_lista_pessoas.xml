@@ -16,11 +16,13 @@
             android:layout_height="56dp"
 
 
-            android:clickable="true"
-
-            tools:layout_editor_absoluteY="8dp"
             android:layout_gravity="bottom|end"
-            />
+
+            android:clickable="true"
+            app:backgroundTint="@color/colorPrimary"
+            app:rippleColor="@color/colorPrimary"
+            app:srcCompat="@android:drawable/ic_menu_add"
+            tools:layout_editor_absoluteY="8dp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/ListaPes"

@@ -111,8 +111,8 @@ public class TelaCadastroEvento extends AppCompatActivity {
         parametros.putString("DataInicioEvento",evento.getDataInicio());
         parametros.putString("DataFimEvento",evento.getDataFim());
 
-
-        mDatabase.child("EventoDB").child(String.valueOf(new Date())).setValue(evento);
+        evento.setId(mDatabase.child("EventoDB").child(String.valueOf(new Date())).getKey());
+        mDatabase.child("EventoDB").child(evento.getId()).setValue(evento);
 
 
         eventoList.add(evento);

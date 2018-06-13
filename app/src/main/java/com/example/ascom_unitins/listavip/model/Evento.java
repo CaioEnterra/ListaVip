@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 
 public class Evento {
+
+    private String id;
     private String nome;
     private String dataFim;
     private String dataInicio;
@@ -16,6 +18,7 @@ public class Evento {
 
 
     public Evento(String nome){
+
         setNome(nome);
     };
 
@@ -53,5 +56,13 @@ public class Evento {
 
     public void setPessoas(ArrayList<Pessoa> pessoas) {
         this.pessoas = pessoas;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

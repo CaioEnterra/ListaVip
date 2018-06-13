@@ -10,11 +10,15 @@ import com.example.ascom_unitins.listavip.R;
 
 public class Pessoa  {
 
+
+    private String id;
     private String nome;
     private String idade;
     private String insta;
     private String numero;
     private String nome_evento;
+    private Boolean presente;
+
 
     //Construtor
     public Pessoa() {
@@ -67,5 +71,20 @@ public class Pessoa  {
     }
 
 
+    public Boolean getPresente() {
+        return presente;
+    }
+
+    public void setPresente(Boolean presente) {
+        this.presente = presente;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
 

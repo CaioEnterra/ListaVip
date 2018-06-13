@@ -74,9 +74,10 @@ public class TelaCadastroPessoas extends AppCompatActivity {
         pessoa.setInsta(InstaPessoa.getText().toString());
         pessoa.setIdade(IdadePessoa.getText().toString());
         pessoa.setNumero(NumeroPessoa.getText().toString());
+        pessoa.setPresente(false);
 
-
-        mDatabase.child("PessoaDB").child(String.valueOf(new Date())).setValue(pessoa);
+        pessoa.setId(mDatabase.child("PessoaDB").child(String.valueOf(new Date())).getKey());
+        mDatabase.child("PessoaDB").child(pessoa.getId()).setValue(pessoa);
 
 
         Intent intent = new Intent(this, TelaListaPessoas.class);

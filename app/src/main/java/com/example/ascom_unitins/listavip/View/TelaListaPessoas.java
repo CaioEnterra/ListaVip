@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 
 import com.example.ascom_unitins.listavip.R;
 import com.example.ascom_unitins.listavip.model.AdaptadorPessoa;
@@ -32,6 +33,7 @@ public class TelaListaPessoas extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     Context minhaActivity =null;
+    CheckBox check = null;
     Pessoa pessoaSelecionada;
 
     @Override
@@ -58,6 +60,7 @@ public class TelaListaPessoas extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         minhaActivity = this;
+        check = (CheckBox) findViewById(R.id.checkBoxPresenca);
 
         //Adicionando fixamente os item, exemplo
         dataSource = new ArrayList<Pessoa>();
@@ -97,6 +100,7 @@ public class TelaListaPessoas extends AppCompatActivity {
 
 
                                 Pessoa pessoa = objSnapShot.getValue(Pessoa.class);
+                                pessoa.setId(objSnapShot.getKey());
                                 if(pessoa.getNome_evento().equals(nomeEvento))
                                     dataSource.add(pessoa);
 
@@ -104,7 +108,7 @@ public class TelaListaPessoas extends AppCompatActivity {
 
                             }
 
-                            AdaptadorPessoa adapt = new AdaptadorPessoa(minhaActivity, dataSource);
+                            AdaptadorPessoa adapt = new AdaptadorPessoa(minhaActivity, dataSource, check);
                             adapt.notifyDataSetChanged();
                             finalLista.setAdapter(adapt);
                         }

@@ -74,10 +74,13 @@ public class TelaListaEvento extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
+
+
                         for(DataSnapshot objSnapShot: dataSnapshot.getChildren()){
 
 
-                                Evento evento = objSnapShot.getValue(Evento.class);
+                            Evento evento = objSnapShot.getValue(Evento.class);
+                            evento.setId(objSnapShot.getKey());
 
                                 dataSource.add(evento);
 
