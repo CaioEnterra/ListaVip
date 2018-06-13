@@ -1,4 +1,4 @@
-package com.example.ascom_unitins.listavip;
+package com.caioapp.ascomunitins.listavip;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

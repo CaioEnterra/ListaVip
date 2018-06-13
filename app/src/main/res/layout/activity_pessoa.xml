@@ -8,7 +8,7 @@
     android:clickable="true"
     android:focusable="auto"
     android:orientation="vertical"
-    tools:context=".model.Pessoa">
+    tools:context="com.caioapp.ascomunitins.listavip.model.Pessoa">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"

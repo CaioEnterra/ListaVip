@@ -1,6 +1,7 @@
 package com.example.ascom_unitins.listavip.model;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +14,8 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.example.ascom_unitins.listavip.R;
+import com.example.ascom_unitins.listavip.model.ItemHolderPessoa;
+import com.example.ascom_unitins.listavip.model.Pessoa;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -95,7 +98,10 @@ public class AdaptadorPessoa  extends RecyclerView.Adapter<ItemHolderPessoa> {
                     item.setPresente(true);
                     celula.itemView.setBackgroundColor(contexto.getResources().getColor(R.color.colorPrimary));
                     mDatabase.child("PessoaDB").child(item.getId()).setValue(item);
+
                 }
+                ((Activity)contexto).finish();
+                notifyItemChanged(position);
                 /*
                 if(!celula.presenca.isChecked()) {
                     item.setPresente(true);
@@ -104,6 +110,7 @@ public class AdaptadorPessoa  extends RecyclerView.Adapter<ItemHolderPessoa> {
                     mDatabase.child("PessoaDB").child(item.getId()).setValue(item);
                 }
                */
+
             }
         });
 
@@ -124,8 +131,8 @@ public class AdaptadorPessoa  extends RecyclerView.Adapter<ItemHolderPessoa> {
                         //NetworkUtils.Apagar(lista.get(position));
                         Toast.makeText(contexto, listaPessoa.get(position).getNome()
                                 + " Deletado", Toast.LENGTH_SHORT).show();
-                        pessoaSelecionada = (Pessoa)listaPessoa.get(position);
-
+                        pessoaSelecionada = (Pessoa) listaPessoa.get(position);
+                        mDatabase.child("PessoaBD").child(pessoaSelecionada.getId()).removeValue();
 
 
                     }
@@ -145,6 +152,7 @@ public class AdaptadorPessoa  extends RecyclerView.Adapter<ItemHolderPessoa> {
             }
 
         });
+
 
 
 
